@@ -18,7 +18,7 @@ st.set_page_config(
 st.write("# Welcome to Diabetics Predictor 💉")
 
 
-df = pd.read_csv(r'C:\Users\swami\OneDrive\Desktop\SOM_Project\diabetes.csv')
+df = pd.read_csv('diabetes.csv')
 
 df_minority=df[df['diabetes']==1]
 df_majority=df[df['diabetes']==0]
