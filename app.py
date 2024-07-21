@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 import seaborn as sns
@@ -103,9 +103,9 @@ else:
 
 
 # MODEL
-rf  = RandomForestClassifier()
-rf.fit(x_train, y_train)
-user_result = rf.predict(user_data)
+gb  = GradientBoostingClassifier()
+gb.fit(x_train, y_train)
+user_result = gb.predict(user_data)
 
 
 
@@ -118,4 +118,4 @@ else:
   output = 'You are Diabetic'
 st.title(output)
 st.subheader('Accuracy: ')
-st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
+st.write(str(accuracy_score(y_test, gb.predict(x_test))*100)+'%')
