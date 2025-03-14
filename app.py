@@ -148,8 +148,10 @@ if submit:
     
     # Map binary values to Yes/No for hypertension and heart disease
     binary_map = {1: 'Yes', 0: 'No'}
-    
+    binary_map1 = {1: 'Male', 0: 'Female'}
     # Apply mappings to respective columns
+    if 'gender' in user_data_display.index:
+        user_data_display.loc['gender', 'Value'] = binary_map1[user_data_display.loc['gender', 'Value']]
     if 'smoking_history' in user_data_display.index:
         user_data_display.loc['smoking_history', 'Value'] = smoking_map[user_data_display.loc['smoking_history', 'Value']]
     if 'hypertension' in user_data_display.index:
